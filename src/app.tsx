@@ -1,9 +1,14 @@
+/// <reference path="types.d.ts" />
 // @flow
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import { HashRouter, Link, NavLink} from "react-router-dom";
 import {connect} from 'react-redux';
 import {get, isEmpty} from 'lodash';
+
+// import {getToken, PorMenu, api} from '@rockwang/pui';
+import PUI from 'pui';
+import {getToken} from 'pui';
 
 import './app.sass';
 import routesFactory from './routesFactory';
@@ -21,6 +26,7 @@ class App extends React.Component<AppProps, object> {
 
   componentDidMount() {
     this.props.fetchAccount();
+    console.log(PUI, getToken, PUI.getToken);
   }
 
   componentDidUpdate(prevProps: any) {
